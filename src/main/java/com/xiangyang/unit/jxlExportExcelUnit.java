@@ -52,9 +52,6 @@ public class jxlExportExcelUnit {
          wcf_title.setAlignment(jxl.format.Alignment.CENTRE); // 设置对齐方式  
          wcf_title.setBorder(jxl.format.Border.ALL, jxl.format.BorderLineStyle.THIN,jxl.format.Colour.BLACK);*/
 		for(int p =0;p<page;p++){
-			if(p==1){
-				System.out.println();
-			}
 			WritableSheet sheet = book.createSheet("page"+p, p);
 			int startRows = 0;
 			int endRows = 0;
