@@ -19,10 +19,31 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven {url "http://localhost:8081/nexus/content/repositories/aliyun/"}
+	maven {url "http://localhost:8081/nexus/content/repositories/sonatype/"}
+	maven {url "http://localhost:8081/nexus/content/repositories/central/"}
 }
 
-
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jetty', version: '1.4.0.RELEASE'
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.1.1'
+    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.4.0.RELEASE'
+    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-remote-shell', version: '1.4.0.RELEASE'
+    compile('org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE') {
+      exclude module:'jackson-databind' 
+    }
+	compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.17'
+	compile group: 'com.alibaba', name: 'druid', version: '1.0.26'
+	compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.4'
+	compile group: 'io.netty', name: 'netty-all', version: '4.1.6.Final'
+	compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.10'
+	compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+    //testCompile group: 'junit', name: 'junit', version: '4.11'
+	compile files('lib/jxl.jar')
+	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.4.2.RELEASE'
+	//compile('org.springframework.boot:spring-boot-starter-web')
+	//testCompile('org.springframework.boot:spring-boot-starter-test')
 }
