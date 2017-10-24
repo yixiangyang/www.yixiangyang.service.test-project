@@ -1,20 +1,23 @@
 package com.xiangyang.model;
 
+import java.sql.Timestamp;
+
 public class TestUser {
 	private String id;
 	private String name;
 	private String age;
 	private String email;
 	private String phone;
+	private Timestamp createTime;
+	private Timestamp updateTime;
 	
 	public TestUser() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TestUser(String id, String name, String age, String email, String phone) {
+	public TestUser( String name, String age, String email, String phone) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.email = email;
@@ -59,6 +62,22 @@ public class TestUser {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Timestamp getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Timestamp createTime) {
+		this.createTime = createTime;
+	}
+
+	public Timestamp getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Timestamp updateTime) {
+		this.updateTime = updateTime;
 	}
 	
 }
