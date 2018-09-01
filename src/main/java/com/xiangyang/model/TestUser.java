@@ -79,5 +79,11 @@ public class TestUser {
 	public void setUpdateTime(Timestamp updateTime) {
 		this.updateTime = updateTime;
 	}
+
+	@Override
+	public String toString() {
+		return "TestUser [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + ", phone=" + phone
+				+ ", createTime=" + createTime + ", updateTime=" + updateTime + "]";
+	}
 	
 }
